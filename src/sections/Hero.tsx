@@ -3,9 +3,10 @@ import CanvasLoader from "@/components/CanvasLoader";
 import Cube from "@/components/Cube";
 import { HackerRoom } from "@/components/HackerRoom";
 import ReactLogo from "@/components/ReactLogo";
+import Rings from "@/components/Rings";
 import Target from "@/components/Target";
 import { calculateSizes } from "@/constants/index";
-import { PerspectiveCamera, Ring } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -42,7 +43,7 @@ const Hero = () => {
               <Target position={sizes.targetPosition} />
               <ReactLogo position={sizes.reactLogoPosition} />
               <Cube />
-              <Ring position={sizes.ringPositions} />
+              <Rings position={sizes.ringPosition} />
             </group>
 
             <ambientLight intensity={1} />
