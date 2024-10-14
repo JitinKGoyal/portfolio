@@ -2,6 +2,7 @@
 import CanvasLoader from "@/components/CanvasLoader";
 import Cube from "@/components/Cube";
 import { HackerRoom } from "@/components/HackerRoom";
+import HeroCamera from "@/components/HeroCamera";
 import ReactLogo from "@/components/ReactLogo";
 import Rings from "@/components/Rings";
 import Target from "@/components/Target";
@@ -33,11 +34,14 @@ const Hero = () => {
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-            <HackerRoom
-              position={sizes.deskPosition}
-              rotation={[0, Math.PI, 0]}
-              scale={sizes.deskScale}
-            />
+
+            <HeroCamera isMobile={isMobile}>
+              <HackerRoom
+                position={sizes.deskPosition}
+                rotation={[0, Math.PI, 0]}
+                scale={sizes.deskScale}
+              />
+            </HeroCamera>
 
             <group>
               <Target position={sizes.targetPosition} />
